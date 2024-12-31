@@ -3,12 +3,12 @@ module DataFramesFunk
 
 ########################################## DataFrame Manupulation Functions ###########################################################
 
-using DataFrames
-using ShiftedArrays
-using DataFramesMeta
+    using DataFrames
+    using ShiftedArrays
+    using DataFramesMeta
 
-export missing_to_nan, category_dataframes, rowwise_ntiles, rowwise_percentiles, shift_dataframe, dict_to_rowframe
-export mask_dataframe, rollmax_dataframe, rollstd_dataframe, row_average, percentage_change, rowwise_zscore, zscore_nonmissing
+    export missing_to_nan, category_dataframes, rowwise_ntiles, rowwise_percentiles, shift_dataframe, dict_to_rowframe, 
+    mask_dataframe, rollmax_dataframe, rollstd_dataframe, row_average, percentage_change, rowwise_zscore, zscore_nonmissing
 
 ####### DataFrames MANIPULATIONS ##########################################################
 
