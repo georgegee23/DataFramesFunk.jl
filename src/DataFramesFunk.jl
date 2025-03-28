@@ -15,11 +15,17 @@ module DataFramesFunk
 function missing_to_nan(df::DataFrame)::DataFrame
 
     """
+    Fill dataframe missing values with NaN.
 
-    Fill dataframe missing values with NaN.  
+    This function iterates through each column of the input DataFrame and replaces any missing values (represented by `missing`) with `NaN` (Not a Number). The column's data type is converted to `Float64` to accommodate `NaN` values.
+
+    # Arguments
+    - `df::DataFrame`: The input DataFrame that may contain missing values.
+
+    # Returns
+    - `DataFrame`: A new DataFrame (or the same DataFrame modified in-place, depending on how it's used) where all missing values have been replaced by `NaN`. The data type of each column will be `Float64`.
 
     """
-
     for col in names(df)
         df[!, col] = convert(Vector{Float64}, coalesce.(df[!, col], NaN))
     end
